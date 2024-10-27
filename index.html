@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #ffffff; /* Fondo blanco */
             color: #333;
             margin: 0;
             padding: 20px;
@@ -18,16 +18,25 @@
         }
 
         h1 {
-            color: #4CAF50;
+            color: #b22222; /* Color rojo para el título */
             text-align: center;
-            font-size: 2em;
+            font-size: 2em; /* Tamaño del texto */
+            display: flex;
+            flex-direction: column; /* Cambiado a columna */
+            align-items: center; /* Centrar elementos */
+            margin-bottom: 10px; /* Reducido margen inferior */
+        }
+
+        h1 img {
+            width: 150px; /* Tamaño del logo ajustado */
+            margin-bottom: 0px; /* Sin espacio entre la imagen y el texto */
         }
 
         table {
             width: 100%;
             max-width: 400px;
             border-collapse: collapse;
-            background-color: white;
+            background-color: #000; /* Fondo negro para el formulario */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             padding: 20px;
@@ -40,9 +49,14 @@
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #b22222; /* Color rojo para el encabezado */
             color: white;
             font-size: 1.2em;
+        }
+
+        td label {
+            color: #fff; /* Color blanco para las etiquetas */
+            font-weight: bold; /* Resaltar texto de las etiquetas */
         }
 
         input[type="text"],
@@ -52,11 +66,13 @@
             margin: 5px 0 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            color: #000; /* Texto negro en los campos */
+            background-color: #444; /* Fondo oscuro para los campos */
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #d4af37; /* Color dorado más atractivo */
+            color: #000;
             padding: 10px;
             border: none;
             border-radius: 4px;
@@ -67,7 +83,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #c3a14d; /* Color dorado claro en hover */
         }
 
         .container {
@@ -80,6 +96,11 @@
             padding: 20px;
         }
 
+        .already-registered {
+            text-align: center;
+            margin-top: 10px;
+        }
+
         /* Media query para móviles */
         @media (max-width: 600px) {
             table {
@@ -87,18 +108,25 @@
             }
 
             h1 {
-                font-size: 1.5em;
+                font-size: 1.5em; /* Tamaño del texto en móviles */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenidos</h1>
+        <h1>
+            <img src="logo.png" alt="Logo"> <!-- Logo encima del título -->
+            Bienvenidos
+        </h1>
         <form action="registro.php" method="POST">
             <table>
                 <tr>
                     <th colspan="2">Formulario de Registro</th>
+                </tr>
+                <tr>
+                    <td><label for="nombre_apellido">Nombre y Apellido:</label></td>
+                    <td><input type="text" id="nombre_apellido" name="nombre_apellido" required></td>
                 </tr>
                 <tr>
                     <td><label for="usuario">Usuario:</label></td>
@@ -115,6 +143,9 @@
                 </tr>
             </table>
         </form>
+        <div class="already-registered">
+            <p>¿Ya estás registrado? <a href="login.html">Iniciar sesión</a></p>
+        </div>
     </div>
 </body>
 </html>

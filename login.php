@@ -9,7 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificar que los campos no estén vacíos
     if (empty($usuario) || empty($contrasena)) {
-        die("Error: Todos los campos son obligatorios.");
+        echo "<script>alert('Error: Todos los campos son obligatorios.'); window.location.href = 'login.html';</script>";
+        exit();
     }
 
     // Comprobar si el usuario existe
@@ -25,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Verificamos la contraseña ingresada con el hash almacenado
         if (password_verify($contrasena, $hashed_password)) {
-            echo "Autenticación satisfactoria. ¡Bienvenido!";
+            echo "<script>alert('Autenticación satisfactoria. ¡Bienvenido!'); window.location.href = 'index.html';</script>";
         } else {
-            echo "Error: Contraseña incorrecta.";
+            echo "<script>alert('Error: Contraseña incorrecta.'); window.location.href = 'login.html';</script>";
         }
     } else {
-        echo "Error: El usuario no existe.";
+        echo "<script>alert('Error: El usuario no existe.'); window.location.href = 'login.html';</script>";
     }
 
     // Cerrar la declaración
