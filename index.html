@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            padding: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        /* Media query para móviles */
+        @media (max-width: 600px) {
+            table {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenidos</h1>
+        <form action="registro.php" method="POST">
+            <table>
+                <tr>
+                    <th colspan="2">Formulario de Registro</th>
+                </tr>
+                <tr>
+                    <td><label for="usuario">Usuario:</label></td>
+                    <td><input type="text" id="usuario" name="usuario" required></td>
+                </tr>
+                <tr>
+                    <td><label for="contrasena">Contraseña:</label></td>
+                    <td><input type="password" id="contrasena" name="contrasena" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Registrarse">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
